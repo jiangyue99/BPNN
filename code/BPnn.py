@@ -37,15 +37,6 @@ def get_data(input_data, n):
     test_data = final_data[:num_train//3]
     return train_data, test_data
 
-
-
-training_data, test_data = get_data(month_data, 25)
-# 4*12 个输入神经元，一层隐藏层，包含 30 个神经元，输出层包含 10 个神经元
-net = network.Network([20*15, 20, 1])
-net.SGD(training_data, 100, len(training_data), 2, test_data = test_data)
-#month_data += [net.SGD(training_data, 100, len(training_data), 2, test_data = test_data)]
-
-
 for i in range(30*12):
     training_data, test_data = get_data(month_data, 25)
     # 4*12 个输入神经元，一层隐藏层，包含 30 个神经元，输出层包含 10 个神经元
